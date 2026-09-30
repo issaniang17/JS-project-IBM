@@ -12,9 +12,9 @@ const blockConst = "I'm a block-scoped const";
 }
 
 // Global scope
-console.log(globalVar); // Output: "I'm a global variable"
-console.log(globalLet); // Output: "I'm also global, but scoped with let"
-console.log(globalConst); // Output: "I'm a global constant"
+// console.log(globalVar); // Output: "I'm a global variable"
+// console.log(globalLet); // Output: "I'm also global, but scoped with let"
+// console.log(globalConst); // Output: "I'm a global constant"
 
 //Block Scope
 // console.log(blockVar);
@@ -27,7 +27,26 @@ function show(){
     }
     show();
     
-    console.log(functionVar); // Throws ReferenceError
-    console.log(functionLet); // Throws ReferenceError
-    console.log(functionConst); // Throws ReferenceError
+    // console.log(functionVar); // Throws ReferenceError
+    // console.log(functionLet); // Throws ReferenceError
+    // console.log(functionConst); // Throws ReferenceError
     
+    {
+        const blockConst = 'const block'
+        let blockLet = 'let block'
+        var blockVar = 'var block'
+        // blockLet = 'reassigne let'
+        // blockConst = 'reassigne const' //TypeError: Assignment to constant variable.
+        // blockVar = 'reassigne var'
+        // console.log(blockConst)
+        // console.log(blockLet)
+        // console.log(blockVar)
+    }
+
+    blockConst = 'reassigne const outside block'
+    blockVar = 'reassigne var outside block'
+    blockLet = 'reassigne let outside block'
+
+    console.log(blockConst)
+    console.log(blockLet)
+    console.log(blockVar)
